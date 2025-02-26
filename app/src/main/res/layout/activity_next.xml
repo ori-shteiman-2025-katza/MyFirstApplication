@@ -5,6 +5,79 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NextActivity">
+    tools:context=".NextActivity"
+    android:background="@android:color/background_light">
+    <!-- תווית ברוך הבא -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ברוך הבא!"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
+    <!-- שדה טקסט ראשון -->
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="348dp"
+        android:layout_height="99dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="הכנס טקסט 1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcomeText" />
+
+    <!-- שדה טקסט שני -->
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="348dp"
+        android:layout_height="116dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:hint="הכנס טקסט 2"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText1" />
+
+    <!-- כפתור 1 -->
+
+    <!-- כפתור 2 -->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="128dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginRight="30dp"
+        android:text="כפתור 1"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="122dp"
+        android:layout_height="92dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:text="כפתור 2"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
