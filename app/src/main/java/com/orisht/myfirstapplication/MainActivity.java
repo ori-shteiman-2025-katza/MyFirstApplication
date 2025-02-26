@@ -9,6 +9,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -152,6 +154,37 @@ LinearBtn.setOnClickListener(new View.OnClickListener() {
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        if(id == R.id.action_login){
+            Toast.makeText(this, "you selected login", Toast.LENGTH_SHORT).show();
+        }
+        else if(id == R.id.action_register){
+            Toast.makeText(this, "you selected register", Toast.LENGTH_SHORT).show();
+        }
+        else if(id == R.id.action_start){
+            Toast.makeText(this, "you selected start", Toast.LENGTH_SHORT).show();
+        }
+        else if(item.getItemId() == R.id.new_item) {
+            Intent intent = new Intent(this, NewActivity.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+         super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+}
+
+
+
+
 
     //@Override
     //public void onClick(View view) {
@@ -169,7 +202,7 @@ LinearBtn.setOnClickListener(new View.OnClickListener() {
        //else{
              //Log.d("ori", "hider");
              //et1.setText("hider");
-         }
+
      //}
     //public void aaaaa(View view) {
         //if(view.getId()==R.id.btn1){
