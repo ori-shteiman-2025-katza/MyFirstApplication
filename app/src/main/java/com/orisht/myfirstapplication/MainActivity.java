@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener { //implements View.OnClickListener
 
-   Button b1,b2,LinearBtn,LinerBtn2,policy;
+   Button b1,b2,LinearBtn,LinerBtn2,policy,settings;
    TextView et1;
    Context context;
    Switch sw;
@@ -141,6 +141,15 @@ LinerBtn2.setOnClickListener(new View.OnClickListener() {
         startActivityForResult(intent,START_GAME);
     }
 });
+settings=findViewById(R.id.settings);
+settings.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent= new Intent(context, SettingsActivity.class);
+        startActivity(intent);
+    }
+});
+
         policy=findViewById(R.id.policy);
         policy.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -68,11 +68,11 @@ public class SettingsActivity extends AppCompatActivity {
                     stopMusic();
                 }
             }
-
         });
+    }
         private void playMusic() {
             if (mediaPlayer == null) {
-                mediaPlayer = MediaPlayer.create(this, R.raw.music_file); // השתמש בשם הקובץ שלך
+                mediaPlayer = MediaPlayer.create(this, R.raw.lebron); // השתמש בשם הקובץ שלך
             }
             mediaPlayer.start();
         }
@@ -84,4 +84,4 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
     }
-}
+
