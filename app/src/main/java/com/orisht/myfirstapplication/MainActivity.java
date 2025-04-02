@@ -7,8 +7,10 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,13 +35,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int START_GAME,start_policy;
    ConstraintLayout constraintLayout;
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         initViews();
         context=this;
-    }
+
+        // יצירת SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+
+        // שמירת נתונים
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("username", "user123");
+        editor.putInt("age", 25);
+        editor.putBoolean("isLoggedIn", true);
+        editor.apply();  // שמירה אסינכרונית
+
+        // קריאת נתונים
+        String username = sharedPreferences.getString("username", "defaultUsername");
+        int age = sharedPreferences.getInt("age", 0);
+        boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+
+        // הדפסת הנתונים
+        Log.d("SharedPreferences", "Username: " + username);
+        Log.d("SharedPreferences", "Age: " + age);
+        Log.d("SharedPreferences", "Is Logged In: " + isLoggedIn);
+}
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
